@@ -6,17 +6,15 @@ body:
   - type: markdown
     attributes:
       value: |
-        For general questions and design discussion, please use the Discussions page: https://github.com/open-rmf/rmf/discussions
-        Not sure if this is the right repository? Open an issue on https://github.com/open-rmf/rmf
         For feature requests, please use the feature request issue form.
         Be as detailed about your issue as possible.
 
   - type: checkboxes
     id: checked-issues
     attributes:
-      label: Before proceeding, is there an existing issue or discussion for this?
+      label: Before proceeding, is there an existing issue for this?
       options:
-        - label: I have done a search for similar [issues](.?q=type%3Aissue) and [discussions](https://github.com/open-rmf/rmf/discussions).
+        - label: I have done a search for similar [issues](.?q=type%3Aissue)
           required: true
 
   - type: input
@@ -31,8 +29,8 @@ body:
   - type: dropdown
     id: installation-type
     attributes:
-      label: Open-RMF installation type
-      description: How did you install Open-RMF? From source, from binaries, Docker, etc.
+      label: Installation type
+      description: How did you install the code? From source, from binaries, Docker, etc.
       options:
         - Source build
         - Binaries
@@ -42,18 +40,10 @@ body:
       required: true
 
   - type: input
-    id: other-installation-type
-    attributes:
-      label: Other Open-RMF installation methods
-      description: Link to guide if Others was selected.
-    validations:
-      required: false
-
-  - type: input
     id: installation-version
     attributes:
-      label: Open-RMF version or commit hash
-      description: If from binaries or docker, give the version. If from source, give the output of git rev-parse HEAD or the repos file you use.
+      label: Code version, commit hash, or specifc branches
+      description: If from binaries or docker, give the version. If from source, give the output of git rev-parse HEAD or the repos file you use. If different branch(es) is used, please specify.
       placeholder: 2.3.0
     validations:
       required: true
@@ -83,14 +73,6 @@ body:
         - Others
     validations:
       required: true
-
-  - type: input
-    id: other-ros-installation-type
-    attributes:
-      label: Other ROS installation methods
-      description: Link to guide if Others was selected.
-    validations:
-      required: false
 
   - type: input
     id: package-or-library
